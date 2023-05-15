@@ -1,0 +1,4 @@
+
+namespace ${NAMESPACE_REPOSITORY};
+
+public class ${NAME_REPOSITORY}Repository : GenericRepository<${TYPE_REPOSITORY}> { }

@@ -1,0 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+
+namespace ${NAMESPACE_DB_CONTEXT};
+
+public interface I${DB_CONTEXT_NAME}DbContext
+{
+    DbSet<T> Set<T>() where T : class;
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+}

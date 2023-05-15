@@ -1,0 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+
+namespace ${NAMESPACE_DB_CONTEXT};
+
+public class ${DB_CONTEXT_NAME}DbContext : DbContext, I${DB_CONTEXT_NAME}DbContext
+{
+    public ${DB_CONTEXT_NAME}DbContext() { }
+    public ${DB_CONTEXT_NAME}DbContext(DbContextOptions<${DB_CONTEXT_NAME}DbContext> options) : base(options) { }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder builder)
+    {            
+        builder.${METHOD_PROVIDER}(
+            Environment.GetEnvironmentVariable("CONNECTION_STRING") ?? 
+            "fake connection string to enable migration script generation"
+        );
+    }
+}
